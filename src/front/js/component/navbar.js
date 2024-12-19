@@ -34,6 +34,8 @@ export const Navbar = () => {
             console.error("Logout error:", error);
             // Still logout on error
             localStorage.removeItem("jwt-token");
+            localStorage.removeItem("id");
+            localStorage.removeItem("user");
             actions.setUser();
             navigate("/login");
         });

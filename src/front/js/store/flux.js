@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			urlFetchApi:"https://expert-space-carnival-pg94q459jr5cggr-3001.app.github.dev",
-			user: {},
+			//userr: {},
 			// urlFetchApi: process.env.BACKEND_URL,
 			user: localStorage.getItem("user") || null,
 			userId: localStorage.getItem("id") || null,
@@ -1263,6 +1263,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			createBlogPost: async (postData) => {
 				const store = getStore();
+				console.log(store.userId)
+				console.log(store.user)
 				if (!store.userId) {
 					setStore({ blogError: "Please log in to create a post" });
 					return false;

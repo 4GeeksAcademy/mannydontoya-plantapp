@@ -150,12 +150,12 @@ def handle_login():
         access_token=create_access_token(identity=user.username)
         user.is_active=True
         db.session.commit()
-        return jsonify({"token":access_token,"id":user.id}),200
+        return jsonify({"token":access_token,"id":user.id,"username":user.username}),200
     elif useremail is not None:
         access_token=create_access_token(identity=useremail.username)
         useremail.is_active=True
         db.session.commit()
-        return jsonify({"token":access_token,"id":useremail.id}),200
+        return jsonify({"token":access_token,"id":useremail.id,"username":useremail.username}),200
     else:       
         return make_response(jsonify({"error":"Missing or Incorrect Credentials"}),401) 
         

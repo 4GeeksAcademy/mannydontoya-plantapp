@@ -3,20 +3,21 @@
 }
 .carddashboard{
     width: 12rem;
-    margin-top: 5px;
+    margin-top: 30px;
 }
 .cbdashboard{
     justify-content: center;
     text-align: center;
-    color: #0a572a;
-    text-shadow: 4px 4px 5px black;
+    color: #1282de;
+    text-shadow: 4px 4px 5px rgba(39, 137, 198, 0.751);
+    font-family:Arial, Helvetica, sans-serif;
 }
 .carddashboard:hover{
     transition: transform .3s; /* Animation */
     width: 13rem;
     transform: scale(1.1); 
     z-index: 5;
-    border-color: #0a572a;
+    border-color: #31f181;
     margin-left: -8px;
 }
 .imglibrary{
@@ -28,10 +29,18 @@
 }
 .imglibrary:hover{
     margin-bottom: 10px;
+
 }
 .cardlibrary:hover{
     margin-top: 20px;
 }
 .carddashboard:hover{
     margin-bottom: 20px;
+    box-shadow: 0 0 15px 5px rgba(13, 227, 227, 0.7); 
+    transition: box-shadow 0.3s ease; 
+}
+.dashboardback {
+    height: 100vh;
+    width: 100%;  
+    background-color: #8fbc8f; 
 }

@@ -60,7 +60,7 @@ export const WelcomeSection = () => {
             </p>
           </div>
           <div className="col-md-6">
-            <a href="/blogs">
+            <a href="/plantblog">
               <img
                 src="https://www.bluemoonestatesales.com/cm/dpl/images/articles/53/luisa-brimble-1KYprL0KevE-unsplash.jpg"
                 alt="House Plant"

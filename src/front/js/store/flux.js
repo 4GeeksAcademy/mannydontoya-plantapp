@@ -7,6 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			urlFetchApi:"https://expert-space-carnival-pg94q459jr5cggr-3001.app.github.dev",
 			//userr: {},
 			// urlFetchApi: process.env.BACKEND_URL,
+			user: {},
+			urlFetchApi: process.env.BACKEND_URL,
 			user: localStorage.getItem("user") || null,
 			userId: localStorage.getItem("id") || null,
 			blogs: [],
@@ -18,229 +20,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favoritePlantList: [],
 			grid: [],
 			plantLibrary: [
-				// {
-				// 	commonName: "Snake Plant",
-				// 	type: "Perennial",
-				// 	lighting: "Partial sun",
-				// 	soilType: "Sandy, well-drained",
-				// 	plantImage: "",
-				// 	scientificName: "Magnolia x soulangiana",
-				// 	commonName: "Snake Plant",
-				// 	growthCycle: "perennial",
-				// 	plantType: "tree",
-				// 	leafType: "broadleaf",
-				// 	hardinessZone: ["7", "8", "9"],
-				// 	height: 30,
-				// 	plantIs: "blooming",
-				// 	bloomTime: ["spring"],
-				// 	flowerColor: ["pink", "purple"],
-				// 	fruitPresent: "summer",
-				// 	fruitColor: "Red",
-				// 	lightExposure: ["sun", "part sun"],
-				// 	plantImage: "https://cdn.mos.cms.futurecdn.net/AFNptCuKbYAKEx4mnna2T9.jpg",
-				// 	drainage: ["well drained", "sandy"],
-				// 	growthRate: "fast",
-				// 	waterReq: "medium",
-				// 	isSusceptible: "Yes",
-				// 	comments:
-				// 		"Magnolias are simply m
-				// },
-				// {
-				// 	commonName: "Aloe Vera",
-				// 	growthCycle: "Perennial",
-				// 	lightExposure: ["sun", "part sun"],
-				// 	soilType: "Dry, well-drained",
-				// 	plantImage: "https://www.giardinibalduzzi.com/wp-content/uploads/2022/08/1343670-aloe-vera-in-giardino-gratuito-foto-scaled.jpeg"
-				// },
-				// {
-				// 	commonName: "Spinach",
-				// 	plantType: "Vegetable",
-				// 	lighting: "Full, Partial sun",
-				// 	soilType: "Loamy, moist, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/vB1pR_nYXPT5BJzFF0h9crD-wNw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/growing-spinach-1403448-13-8e9751e8c47043529effcb4d0786e4b1.jpg"
-				// },
-				// {
-				// 	commonName: "Basil",
-				// 	plantType: "Vegetable",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, moist, well-drained",
-				// 	plantImage: "https://lawn.com.au/wp-content/uploads/2022/08/how-to-grow-basil-1.jpg"
-				// },
-				// {
-				// 	commonName: "Bell Pepper",
-				// 	plantType: "Fruit",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, well-drained",
-				// 	plantImage: "https://www.gardentech.com/-/media/project/oneweb/gardentech/plantImages/blog/growing-your-own-bell-peppers/growing_peppers-pepper_garden.jpg"
-				// },
-				// {
-				// 	commonName: "Lady Fern",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Shade, partial sun",
-				// 	soilType: "Moist, sandy, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/Fc5fBYqJfwoNNlxGRaNS8OFWYPM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/lady-ferns-plant-profile-5120209-hero-3c985b21a2354012a14b29c94626de45.jpg"
-				// },
-				// {
-				// 	commonName: "Carrot",
-				// 	plantType: "Vegetable",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Loose, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/O9KDM5Uir7Uaiz1lZ1nl0pLSriU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/how-to-grow-carrots-in-the-vegetable-garden-1403472-07-de29d2582e34413a8d085f9b05f509ca.jpg"
-				// },
-				// {
-				// 	commonName: "Rose",
-				// 	plantType: "Shrub",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, well-drained",
-				// 	plantImage: "https://images.squarespace-cdn.com/content/v1/631943b5aaa6db42756b140e/d59bb6a8-c7ec-4dce-bef3-d879f15f42dd/DSCF6492.JPG"
-				// },
-				// {
-				// 	commonName: "Mint",
-				// 	plantType: "Herb",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Loamy, moist, well-drained",
-				// 	plantImage: "https://gardenerspath.com/wp-content/uploads/2020/04/Mint-Growing-in-the-Garden.jpg"
-				// },
-				// {
-				// 	commonName: "Cactus",
-				// 	type: "Succulent, Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Sandy, Well-drained",
-				// 	plantImage: "https://media.istockphoto.com/id/912142406/photo/cactus-small-plants.jpg?s=612x612&w=0&k=20&c=zknWl6MWmyP61I8gzlvasTuKxsMnU2Jb-uQCz6b1pt4="
-				// },
-				// {
-				// 	commonName: "African Daisy",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full sun",
-				// 	soilType: "Sandy, well-drained",
-				// 	plantImage: "https://justinseed.com/wp-content/uploads/2023/07/African-Daisy.jpg"
-				// },
-				// {
-				// 	commonName: "Agapanthus",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Sandy, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/udoeXTDH8XSz-ff6y3yrt130h-A=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/agapanthus-growing-guide-7368912_04-66a3f4cf245b4332b28954dd37c784f5.jpg"
-				// },
-				// {
-				// 	commonName: "Cabbage",
-				// 	plantType: "Vegetable",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/1WxLtYy1wNhoAVGFKeESb4DAM4g=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/thespruce.com-growing-and-caring-for-cabbage-plants-1402815-1-4fef655d4e8a46819667ae848009362e.jpg"
-				// },
-				// {
-				// 	commonName: "Marigold",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/Ybj8BQX0mWGJyIcUGQs_VcmyhFA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/growing-and-using-calendula-1402626-26-f3f6f07fcc594a79b1a792f863a4a8e6.jpg"
-				// },
-				// {
-				// 	commonName: "Daffodils",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Moist, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/aCZv-7XK5yNgQKcbJX1qvP2nEXg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/planting-and-growing-daffodils-1402136_01-bb8eada2ffb4443dbb20a7b1f0f3dfce.jpg"
-				// },
-				// {
-				// 	commonName: "Daylily",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Loamy",
-				// 	plantImage: "https://www.thespruce.com/thmb/FpBXAS3tkz3fY9Te20BmTeWLBGc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/how-to-grow-and-care-for-daylilies-5075400-hero-dc8f260afc6844dcb9067abebeb883ae.jpg"
-				// },
-				// {
-				// 	commonName: "Delphinium",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Moist, loamy, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/u5fQa4QZQyZ6Xezehg5yt-ai2z4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/delphinium-care-guide-7105084_10-12092ab0177a49c18d3c156f53bd1ee9.jpg"
-				// },
-				// {
-				// 	commonName: "Garlic",
-				// 	plantType: "Vegetable",
-				// 	lighting: "Full sun",
-				// 	soilType: "Moist, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/9ZfZ_2BUSaX84fOQzkaUAWEgpR0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/hardneck-and-softneck-garlic-2540056-02-187d9130324346319f9d2df16a7124c5.jpg"
-				// },
-				// {
-				// 	commonName: "Chamomile",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full sun",
-				// 	soilType: "Well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/jy6mUAdNJo1aHVs99v74IFjpPY0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/how-to-grow-chamomile-1402627-02-8567d20717ce40679aab37d06686a806.jpg"
-				// },
-				// {
-				// 	commonName: "Jalapeño Pepper",
-				// 	plantType: "Fruit",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, moist, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/loGMkuLL7mL7CNkVlfbnZzQkCUM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/grow-jalapeno-peppers-inside-1902569-7-e261f3dbeb114161b0d9e4f6e6f89fac.jpg"
-				// },
-				// {
-				// 	commonName: "Radish",
-				// 	plantType: "Vegetable",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, sandy, moist, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/4jE9V2xk7AgcuGhkO5rphduGs3Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/growing-radishes-in-the-home-vegetable-garden-1403477-02-c295e04667df4c8fac380a5543b663e1.jpg"
-				// },
-				// {
-				// 	commonName: "Turmeric",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Moist, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/wcrhAfRateEx54H23w3O71L2vCw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/turmeric-plant-477981208-b626ae8455c9480c9e76ec81b2ac720e.jpg"
-				// },
-				// {
-				// 	commonName: "Tulip",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full sun",
-				// 	soilType: "Rich, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/8b-jbjbwgUz28mzGYP9sv0okk7U=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tulips-planting-and-growing-tulips-1402137-08-aee8737736d848ef95f0a340705d9bf9.jpg"
-				// },
-				// {
-				// 	commonName: "Chamomile",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full",
-				// 	soilType: "Well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/jy6mUAdNJo1aHVs99v74IFjpPY0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/how-to-grow-chamomile-1402627-02-8567d20717ce40679aab37d06686a806.jpg"
-				// },
-				// {
-				// 	commonName: "Tomato",
-				// 	plantType: "Fruit",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/zARHUKvx8nouC2J7z3-az_UHwPY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tomato-plant-7488122_Hero1A-0a34969ad372497ea344d0cbfa026484.jpg"
-				// },
-				// {
-				// 	commonName: "Thyme",
-				// 	plantType: "Herb",
-				// 	lighting: "Full sun",
-				// 	soilType: "Loamy, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/HjedhyaOVoUM93c1asOVA09qUlI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/grow-thyme-indoors-1902495-05-8eeb0bffe5e2421cacca15e200b1382c.jpg"
-				// },
-				// {
-				// 	commonName: "Sunflower",
-				// 	growthCycle: "Annual",
-				// 	lighting: "Full sun",
-				// 	soilType: "Well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/V-Lhd8LLdBaHnA9OXcxDbSA8U1s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/growing-sunflowers-1402916-02-5c7133a770c8407887fa6b23e6e68f17.jpg"
-				// },
-				// {
-				// 	commonName: "Spider Lily",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full, partial sun",
-				// 	soilType: "Well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/V-Lhd8LLdBaHnA9OXcxDbSA8U1s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/growing-sunflowers-1402916-02-5c7133a770c8407887fa6b23e6e68f17.jpg"
-				// },
-				// {
-				// 	commonName: "Lavender",
-				// 	growthCycle: "Perennial",
-				// 	lighting: "Full sun",
-				// 	soilType: "Dry, well-drained",
-				// 	plantImage: "https://www.thespruce.com/thmb/AcExNXC2oPyfysYMhZWGMIpivf8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/growing-lavender-1402779-hero-d308fde4141e431eabe5ef2e5bf3ba11_1-ba6ca30e02f546779cf0839a00aee493.jpg"
-				// },
 				{
 					scientificName: "Dracaena trifasciata",
 					commonName: "Snake Plant",
@@ -1129,6 +908,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ user: {} })
 				}
 			},
+
+			setGrid: (newGrid) => {
+				setStore({ grid: newGrid });
+				const newGridJSON = JSON.stringify(newGrid);
+				localStorage.setItem("grid", newGridJSON);
+			},
+			
 			getPlantList: () => {
 				fetch(speciesapiUrl)
 					.then((res) => {
@@ -1141,6 +927,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("plantslist", data.data);
 						setStore({ plantList: data.data });
 					})
+					.catch(error => console.error("Error fetching plant list:", error));
 			},
 			// setUser(value){
 			// 	localStorage.setItem("id", value)

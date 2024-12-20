@@ -6,7 +6,7 @@ export const AddPlant = () => {
     const { store, actions } = useContext(Context);
     const params = useParams(); // Captures route parameters
     const navigate = useNavigate(); // Navigate programmatically
-    const [searchTerm, setSearchTerm] = useState(""); // State for the search term
+    const [searchTerm, setSearchTerm] = useState(""); 
 
     // Function to add the selected plant to the garden slot
     const addPlantToGrid = (plant) => {

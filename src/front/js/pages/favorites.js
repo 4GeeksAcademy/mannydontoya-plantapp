@@ -52,11 +52,18 @@ export const Favorites = () => {
                                                     type="button">
                                                     Read more
                                                 </button>
-                                                <button
+                                                {/* <button
                                                     onClick={() => actions.addFavorite(item, store.user.id)}
                                                     className="btn btn-style"
                                                     type="button">
                                                     Add To Favorites
+                                                </button> */}
+                                                <button
+                                                    onClick={() => actions.removeFavorite(item)}
+                                                    className="btn btn-style"
+                                                    type="button"
+                                                >
+                                                    Remove from Favorites
                                                 </button>
                                                 <p className="card-text">
                                                     <small className="text-muted">

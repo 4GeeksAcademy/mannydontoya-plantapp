@@ -30,12 +30,12 @@ export const Library = () => {
                             <div className="card-body">
                                 <div className="d-flex justify-content-between">
                                     <h5 className="card-title">{plant.common_name}</h5>
-                                    <button
+                                    {/* <button
                                         className="btn btn-outline-success"
                                         onClick={() => actions.addToFavorites(plant)}
                                     >
                                         <i className="fa-regular fa-heart"></i>
-                                    </button>
+                                    </button> */}
                                 </div>
                                 <h6 className="card-subtitle mb-2 text-muted">
                                     {plant.scientific_name.join(', ')}

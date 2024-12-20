@@ -293,7 +293,7 @@ export const SearchPlant = () => {
 															onClick={() => actions.addFavorite(item, store.user.id)}
 															className="btn btn-style"
 															type="button">
-															Add To Favorites
+															<i className="fa-regular fa-heart"></i>
 														</button>
 														<p className="card-text">
 															<small className="text-muted">

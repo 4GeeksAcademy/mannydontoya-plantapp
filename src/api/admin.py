@@ -8,6 +8,7 @@ class BlogPostModelView(ModelView):
     column_list = (
         'author.email', 
         'author.username', 
+        'author.id',
         'title', 
         'content', 
         'image_url', 

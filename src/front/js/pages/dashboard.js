@@ -28,26 +28,6 @@ export const Dashboard = () => {
                     </Link>
                 </div>
                 <div className="col-lg-2 col-sm-12">
-                    <Link to="/favorites">
-                        <div className="card carddashboard">
-                            <img className="card-img-top" src="https://img.freepik.com/premium-vector/heart-line-icon-like-dislike-feedback-favorites-rating-popularity-social-networks-photos-feedback-concept-vector-sticker-line-icon-white-background_727385-831.jpg" alt="Card image cap" />
-                            <div className="card-body cbdashboard">
-                                <h5 className="card-title">My Favorites</h5>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="col-lg-2 col-sm-12">
-                    <Link to="/plantblog">
-                        <div className="card carddashboard">
-                            <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgB2he3_UKZ1Dt2sgPuwBAEXSrb-xuSCUH8w&s" alt="Card image cap" />
-                            <div className="card-body cbdashboard">
-                                <h5 className="card-title">Blogs</h5>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="col-lg-2 col-sm-12">
                     <Link to="/searchplant">
                         <div className="card carddashboard">
                             <img className="card-img-top" src="https://st.depositphotos.com/57803962/57308/v/450/depositphotos_573087738-stock-illustration-search-web-icon-simple-illustration.jpg" alt="Card image cap" />
@@ -58,11 +38,31 @@ export const Dashboard = () => {
                     </Link>
                 </div>
                 <div className="col-lg-2 col-sm-12">
+                    <Link to="/favorites">
+                        <div className="card carddashboard">
+                            <img className="card-img-top" src="https://img.freepik.com/premium-vector/heart-line-icon-like-dislike-feedback-favorites-rating-popularity-social-networks-photos-feedback-concept-vector-sticker-line-icon-white-background_727385-831.jpg" alt="Card image cap" />
+                            <div className="card-body cbdashboard">
+                                <h5 className="card-title">My Favorites</h5>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-lg-2 col-sm-12">
                     <Link to="/library">
                         <div className="card carddashboard">
                             <img className="card-img-top" src="https://i.pinimg.com/736x/35/48/09/354809cd3b95e7dc857de22a3609a0a1.jpg" alt="Card image cap" />
                             <div className="card-body cbdashboard">
                                 <h5 className="card-title">My Library</h5>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-lg-2 col-sm-12">
+                    <Link to="/plantblog">
+                        <div className="card carddashboard">
+                            <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgB2he3_UKZ1Dt2sgPuwBAEXSrb-xuSCUH8w&s" alt="Card image cap" />
+                            <div className="card-body cbdashboard">
+                                <h5 className="card-title">Blogs</h5>
                             </div>
                         </div>
                     </Link>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import noImg from "../../img/empty_pot.jpg";
 import "../../styles/blog.css";
 
@@ -13,7 +13,7 @@ const PlantBlog = () => {
         content: "",
         image_url: ""
     });
-
+const navigate = useNavigate()
 
     useEffect(() => {
         actions.fetchBlogs();
@@ -35,6 +35,7 @@ const PlantBlog = () => {
         if (success) {
             setNewPost({ title: "", content: "", image_url: "" });
         }
+        navigate("/dashboard")
     };
 
 

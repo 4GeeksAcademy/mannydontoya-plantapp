@@ -914,7 +914,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const newGridJSON = JSON.stringify(newGrid);
 				localStorage.setItem("grid", newGridJSON);
 			},
-			
+
 			getPlantList: () => {
 				fetch(speciesapiUrl)
 					.then((res) => {
@@ -972,14 +972,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				const isAlreadyFavorite = store.favoritePlantList.some((elem) => elem.commonName === plant.commonName);
 				console.log(isAlreadyFavorite)
+				console.log("plant being added to favoritePlantList", plant);
 				if (!isAlreadyFavorite) {
 					setStore({ favoritePlantList: [...store.favoritePlantList, plant] });
 				}
 			},
 
-			removeFavorite: (id) => {
+			// removeFavorite: (id) => {
+			// 	const store = getStore();
+			// 	const updatedFavorites = store.favoritePlantList.filter((elem) => elem.id !== id);
+			// 	setStore({ favoritePlantList: updatedFavorites });
+			// },
+			removeFavorite: (plant) => {
 				const store = getStore();
-				const updatedFavorites = store.favoritePlantList.filter((elem) => elem.id !== id);
+				const updatedFavorites = store.favoritePlantList.filter((elem) => elem.commonName !== plant.commonName);
 				setStore({ favoritePlantList: updatedFavorites });
 			},
 
@@ -1049,69 +1055,69 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			createBlogPost: async (postData) => {
-				const store = getStore();
-				console.log(store.userId)
-				console.log(store.user)
-				if (!store.userId) {
-					setStore({ blogError: "Please log in to create a post" });
-					return false;
-				}
+				// const store = getStore();
+				// if (!store.userId) {
+				// 	setStore({ blogError: "Please log in to create a post" });
+				// 	return false;
+				// }
 
-				try {
-					const resp = await fetch(process.env.BACKEND_URL + "/blog_posts", {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-							userId: store.userId
-						},
-						body: JSON.stringify({
-							...postData,
-							author_id: store.userId,
-						})
-					});
+				// try {
+				// 	const resp = await fetch(process.env.BACKEND_URL + "/blog_posts", {
+				// 		method: "POST",
+				// 		headers: {
+				// 			"Content-Type": "application/json",
+				// 			userId: store.userId
+				// 		},
+				// 		body: JSON.stringify({
+				// 			...postData,
+				// 			author_id: store.userId,
+				// 		})
+				// 	});
 
-					if (resp.ok) {
-						await getActions().fetchBlogs();
-						setStore({ blogError: null });
-						return true;
-					} else {
-						const data = await resp.json();
-						setStore({ blogError: data.error || "Failed to create post " });
-						return false;
-					}
-				} catch (error) {
-					setStore({ blogError: "Failed to create post" });
-					console.error(error);
-					return false;
-				}
+				// 	if (resp.ok) {
+				// 		await getActions().fetchBlogs();
+				// 		setStore({ blogError: null });
+				// 		return true;
+				// 	} else {
+				// 		const data = await resp.json();
+				// 		setStore({ blogError: data.error || "Failed to create post " });
+				// 		return false;
+				// 	}
+				// } catch (error) {
+				// 	setStore({ blogError: "Failed to create post" });
+				// 	console.error(error);
+				// 	return false;
+				// }
+				setStore ({blogs: [...getStore().blogs, postData]})
 			},
 
 			editBlogPost: async (blogId, editedData) => {
-				try {
-					const resp = await fetch(`${process.env.BACKEND_URL}/blog_posts/${blogId}/edit`, {
-						method: "PUT",
-						headers: {
-							"Content-Type": "application/json",
-							userId: getStore().userId
-						},
-						body: JSON.stringify(editedData)
-					});
+				// try {
+				// 	const resp = await fetch(`${process.env.BACKEND_URL}/blog_posts/${blogId}/edit`, {
+				// 		method: "PUT",
+				// 		headers: {
+				// 			"Content-Type": "application/json",
+				// 			userId: getStore().userId
+				// 		},
+				// 		body: JSON.stringify(editedData)
+				// 	});
 
-					const data = await resp.json();
+				// 	const data = await resp.json();
 
-					if (resp.ok) {
-						await getActions().fetchBlogs();
-						await getActions().fetchBlogAndComments(blogId);
-						return true;
-					} else {
-						setStore({ blogError: data.error || "Failed to edit post" });
-						return false;
-					}
-				} catch (error) {
-					setStore({ blogError: "Failed to edit post" });
-					console.error("Error editing post:", error);
-					return false;
-				}
+				// 	if (resp.ok) {
+				// 		await getActions().fetchBlogs();
+				// 		await getActions().fetchBlogAndComments(blogId);
+				// 		return true;
+				// 	} else {
+				// 		setStore({ blogError: data.error || "Failed to edit post" });
+				// 		return false;
+				// 	}
+				// } catch (error) {
+				// 	setStore({ blogError: "Failed to edit post" });
+				// 	console.error("Error editing post:", error);
+				// 	return false;
+				// }
+				setStore ({blogs: [...getStore().blogs, editedData]})
 			},
 
 			fetchBlogAndComments: async (blogId) => {
